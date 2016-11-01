@@ -1,0 +1,70 @@
+<template name="Food_Hunt_Page">
+
+  <div style="padding-top: 20px;" class="ui container">
+    <table class="ui my selectable inverted celled padded table">
+      <thead>
+      <tr>
+        <th class="single line">PLACE</th>
+        <th>DISTANCE FROM UH MANOA</th>
+        <th>INGREDIENTS</th>
+        <th>COMPLETE MEALS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <h4 style="font-weight: normal;" class="ui image header">
+            <a class="{{ isActiveRoute 'Food_Item_Page'}}" href="{{ pathFor 'Food_Item_Page' }}"><img
+                src="/images/theMarket.jpg" class="ui small rounded image"></a>
+            <div class="my content">
+              The Market At Campus Center
+              <!--<div class="my sub header">-->
+              <!--Human Resources-->
+              <!--</div>-->
+            </div>
+          </h4>
+        </td>
+        <td class="single line">
+          On Campus
+        </td>
+
+        <td>
+          Fruits
+          <br/>
+          Vegetables
+        </td>
+        <td>
+          No
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h4 style="font-weight: normal;" class="ui image header">
+            <img src="/images/nijiyaMarket.jpg" class="ui small rounded image">
+            <br/>
+            <div class="my content">
+              Nijiya Market
+              <!--<div class="my sub header">-->
+              <!--Human Resources-->
+              <!--</div>-->
+            </div>
+          </h4>
+        </td>
+        <td class="single line">
+          5 min
+        </td>
+
+        <td>
+          Full Grocery
+        </td>
+        <td>
+          Yes
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="padding-bottom: 100px;"></div>
+
+</template>
