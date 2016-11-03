@@ -16,3 +16,5 @@ import './food-list-page.html';
 import './food-item-page.html';
 
 import './food-hunt-page.html';
+
+import './add-food-page.html';

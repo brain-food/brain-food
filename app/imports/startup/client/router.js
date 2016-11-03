@@ -63,6 +63,13 @@ FlowRouter.route('/food-hunt', {
   },
 });
 
+FlowRouter.route('/add-food', {
+  name: 'Add_Food_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Food_Page' });
+  },
+});
+
 // FlowRouter.route('/add-contact', {
 //   name: 'Add_Contact_Page',
 //   action() {
