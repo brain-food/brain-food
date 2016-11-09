@@ -38,12 +38,22 @@ h1, h2, h3, h4 {
   border: solid white;
 }
 
-.my.content, .my.sub.header {
+.my.content, .my.sub.header, .my.header {
   color: white;
   font-family: 'Press Start 2P', cursive;
 }
 
 .my.twelve.wide.column {
+  color: white;
+  background: darkgreen;
+  background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(darkgreen, black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(darkgreen, black); /* Standard syntax (must be last) */
+  border: solid white;
+}
+
+.ui.my.inverted.segment {
   color: white;
   background: darkgreen;
   background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */

@@ -77,6 +77,13 @@ FlowRouter.route('/edit-food', {
   },
 });
 
+FlowRouter.route('/account', {
+  name: 'Account_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Account_Page' });
+  },
+});
+
 // FlowRouter.route('/add-contact', {
 //   name: 'Add_Contact_Page',
 //   action() {
