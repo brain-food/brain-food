@@ -2,26 +2,28 @@
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <div class="ui top fixed inverted menu">
-    <div style="font-family: 'Press Start 2P'; font-size: 80%; border: solid white; background: darkgreen;
+    <div class="ui container" style="font-family: 'Press Start 2P'; font-size: 80%; border: solid white; background: darkgreen;
   background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(darkgreen, black); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
   background: linear-gradient(darkgreen, black); /* Standard syntax (must be last) */
-  border: solid white;" class="ui container">
-      <a class="fitted item" href="{{pathFor 'Home_Page'}}"><img class="ui image item" src="/images/smallLightBulb2.png"></a>
-      <a class="fitted item" href="{{pathFor 'Home_Page'}}"><h1 style="font-family: 'Press Start 2P'; font-size: 100%; font-weight: normal;">Brain_Food</h1></a>
-      {{#if currentUser}}
-        <a class="{{ isActiveRoute 'Add_Stuff_Page'}} item" href="{{ pathFor 'Add_Stuff_Page' }}">Add Stuff </a>
-        <a class="{{ isActiveRoute 'List_Stuff_Page'}} item" href="{{ pathFor 'List_Stuff_Page' }}">List Stuff</a>
-      {{/if}}
+  border: solid white;">
+      <a class="fitted item" href="{{pathFor 'Home_Page'}}"><img class="ui image item"
+                                                                 src="/images/smallLightBulb2.png"></a>
+      <a class="fitted item" href="{{pathFor 'Home_Page'}}"><h1
+          style="font-family: 'Press Start 2P'; font-size: 100%; font-weight: normal;">Brain Food</h1></a>
       <a class="{{ isActiveRoute 'About'}} right item" href="{{ pathFor 'About_Page' }}">About</a>
-      <a class="{{ isActiveRoute 'Food_List_Page'}} item" href="{{ pathFor 'Food_List_Page' }}">Food_List</a>
-      <a class="{{ isActiveRoute 'Food_Hunt_Page'}} item" href="{{ pathFor 'Food_Hunt_Page' }}">Food_Hunt</a>
-      <a class="{{ isActiveRoute 'Add_Brain_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Add_Food </a>
-      <a class="{{ isActiveRoute 'Edit_Your_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Edit_Food</a>
-      <a class="{{ isActiveRoute 'Edit_Your_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">My_Food</a>
-      <a class="fitted item" href="{{pathFor 'Home_Page'}}"><img class="ui image item" src="/images/searchIcon.png"></a>
-      <a href="#" class="item">{{> loginButtons }} </a>
+      {{#if currentUser}}
+        <a class="{{ isActiveRoute 'Food_List_Page'}} item" href="{{ pathFor 'Food_List_Page' }}">Food List</a>
+        <a class="{{ isActiveRoute 'Food_Hunt_Page'}} item" href="{{ pathFor 'Food_Hunt_Page' }}">Food Hunt</a>
+        <a class="{{ isActiveRoute 'Add_Brain_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Add Food </a>
+        <a class="{{ isActiveRoute 'Edit_Your_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Edit Food</a>
+        <a class="{{ isActiveRoute 'Edit_Your_Food'}} item" href="{{ pathFor 'Add_Contact_Page' }}">My Food</a>
+        <a class="fitted item" href="{{pathFor 'Home_Page'}}"><img class="ui image item"
+                                                                   src="/images/searchIcon.png"></a>
+      {{/if}}
+
+      {{>Cas_Login}}
     </div>
   </div>
 </template>

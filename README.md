@@ -1,26 +1,26 @@
-# final-project-mockup
+# Goals  
+The ultimate goal of Brain Food is to create a network of users through which healthy, cost-effective recipes can be shared through a simple, fun webpage.
 
-Landing Page
-<br>
-<img src="/doc/01Landing.png">
-<br><br>
 
-About Page
-<br>
-<img src="/doc/02About.png">
-<br><br>
+### Currently done:  
+- Most of what we would like the webpage to look like  
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/01Landing.png)
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/02About.png)
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/03FoodList.png)
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/04FoodItem.png)
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/05FoodHunt.png)
+![](https://raw.githubusercontent.com/brain-food/brain-food.github.io/master/doc/06AddFood.png)
 
-Food_List Page
-<br>
-<img src="/doc/03FoodList.png">
-<br><br>
+### Work in progress:  
+- Backend functionality  
+- UH CAS integration  
+- Launching to meteor galaxy
+- Support/contact method
 
-Food_Item Page
-<br>
-<img src="/doc/04FoodItem.png">
-<br><br>
 
-Food_Hunt Page
-<br>
-<img src="/doc/05FoodHunt.png">
-<br><br>
+### Authors and Contributors
+Kea Uehara @KeaUehara  
+Clint Morimoto @clint-morimoto  
+Steven Braun @Steven-Braun  
+Riley Miyamoto @RileyMiyamoto  
+
