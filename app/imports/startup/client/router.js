@@ -28,7 +28,7 @@ FlowRouter.route('/food-list', {
   },
 });
 
-FlowRouter.route('/food-item', {
+FlowRouter.route('/food-item/:_id', {
   name: 'Food_Item_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Food_Item_Page' });
