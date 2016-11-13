@@ -24,6 +24,7 @@ h1, h2, h3, h4 {
   padding: 0;
 }
 
+#login-buttons a, .accounts-dialog a{
   color: white;
 }
 
