@@ -1,9 +1,5 @@
 <template name="Food_List_Page">
 
-  <!--<div class="ui middle aligned centered grid text container">-->
-  <!--Hello!-->
-  <!--</div>-->
-
   <div style="padding-top: 20px;" class="ui container">
     <table class="ui my selectable inverted celled padded table">
       <thead>
@@ -17,62 +13,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>
-          <h4 style="font-weight: normal;" class="ui image header">
-            <a class="{{ isActiveRoute 'Food_Item_Page'}}" href="{{ pathFor 'Food_Item_Page' }}"><img src="/images/easySirloinSteak.jpg" class="ui small rounded image"></a>
-            <div class="my content">
-              Easy Sirloin Steak
-              <!--<div class="my sub header">-->
-              <!--Human Resources-->
-              <!--</div>-->
-            </div>
-          </h4>
-        </td>
-        <td class="single line">
-          Protein
-        </td>
-        <td>
-          $3.50
-        </td>
-        <td>
-          12 min
-        </td>
-        <td>
-          30 min
-        </td>
-        <td>
-          Cooking a perfect steak is easier than it seems!  All you need is a sturdy pan, salt, pepper, olive oil, and a solid cooking technique.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h4 style="font-weight: normal;" class="ui image header">
-            <img src="/images/microwaveSweetPotato.jpg" class="ui small rounded image">
-            <div class="my content">
-              Microwave Sweet Potato
-              <!--<div class="my sub header">-->
-              <!--Human Resources-->
-              <!--</div>-->
-            </div>
-          </h4>
-        </td>
-        <td class="single line">
-          Vegetable
-        </td>
-        <td>
-          $0.80
-        </td>
-        <td>
-          7 min
-        </td>
-        <td>
-          5 min
-        </td>
-        <td>
-          Save yourself a whole ‘lotta time and nuke your sweet potato in the microwave.
-        </td>
-      </tr>
+      {{#each recipe in recipeList}}
+        <tr>
+          <td><a href="{{pathFor 'Food_Item_Page' _id=recipe._id}}"><img class="ui small rounded image" src="/images/{{recipe.image}}"> <h4>{{recipe.recipename}}</h4></a></td>
+          <td>{{recipe.type}}</td>
+          <td>${{recipe.cost}}</td>
+          <td>{{recipe.cooktime}} min</td>
+          <td>{{recipe.preptime}} min</td>
+          <td>{{recipe.shortdescription}}</td>
+        </tr>
+      {{/each}}
       </tbody>
     </table>
   </div>

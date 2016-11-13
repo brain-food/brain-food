@@ -16,12 +16,5 @@
       "popupWidth": 810,
       "popupHeight": 610
     }
-  },
-  "allowed_users": [
-    "johnson",
-    "keal",
-    "sbraun",
-    "clintmor",
-    "rkam9"
-  ]
+  }
 }
