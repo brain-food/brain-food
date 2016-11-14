@@ -13,6 +13,9 @@ import './food-hunt-page.html';
 
 import './add-food-page.html';
 
+import './add-location-page.html';
+import './add-location-page.js';
+
 import './edit-food-page.html';
 
 import './account-page.html';
