@@ -1,94 +1,106 @@
 <template name="Add_Food_Page">
 
-  <div style="padding-bottom: 15px;">
-  </div>
+  <div style="padding-top: 15px;" class="ui borderless my container">
 
-  <div class="ui borderless my container">
     <p style="color: rgb(250,250,120); text-align: center; font-size: 225%; padding-top: 14px; padding-bottom: 14px; background-image: url('https://s5.postimg.org/kynia6fyf/super_Green2_background.png');">
       HERE COMES A NEW FOOD ITEM!
     </p>
-  </div>
 
-  <div style="height: 620px; padding-bottom: 250px;" class="ui my middle aligned grid container">
-    <div style="padding-top: 120px;" class="two column row">
-      <div class="two wide column"></div>
-      <div style="padding-top: 150px;" class="four wide column">
-        <img class="ui image item" src="/images/GoFoodGirl.png">
+    <div class="ui middle aligned grid">
+
+      <div class="four wide centered column" style="margin-right:20px;">
+        <img class="ui image" src="/images/GoFoodGirl.png">
       </div>
-      <div style="padding-top: 290px;" class="eight wide column">
 
-        <div style="color: white;
-            background: darkgreen;
-            background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(darkgreen, black); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(darkgreen, black); /* Standard syntax (must be last) */
-            border: solid white;" class="ui inverted segment">
-          <div class="ui inverted form">
+        <div id="add-food-form" class="eight wide centered column" style="margin-left: 0;">
+          <form class="ui inverted form recipe-data-form {{ errorClass}}">
             <div class="field">
               <label>FOOD NAME</label>
-              <input placeholder="Food Name" type="text">
+              <input placeholder="Food Name" type="text" name="name" id="name">
+              {{#if displayFieldError 'name' }}
+                <div class="ui error message">
+                  <p>You must specify a food name.</p>
+                </div>
+              {{/if}}
             </div>
             <div class="two fields">
               <div class="field">
                 <label>FOOD TYPE</label>
-                <input placeholder="Food type" type="text">
+                <input placeholder="Food type" type="text" name="type" id="type">
+                {{#if displayFieldError 'type' }}
+                  <div class="ui error message">
+                    <p>You must specify a food type.</p>
+                  </div>
+                {{/if}}
               </div>
               <div class="field">
                 <label>COST PER SERVING</label>
-                <input placeholder="Cost Per Serving" type="text">
+                <input placeholder="Cost Per Serving" type="text" name="cost" id="cost">
+                {{#if displayFieldError 'cost' }}
+                  <div class="ui error message">
+                    <p>You must specify a cost per serving.</p>
+                  </div>
+                {{/if}}
               </div>
             </div>
             <div class="two fields">
               <div class="field">
                 <label>COOKING TIME</label>
-                <input placeholder="Cooking Time" type="text">
+                <input placeholder="Cooking Time" type="text" name="cooktime" id="cooktime">
+                {{#if displayFieldError 'cooktime' }}
+                  <div class="ui error message">
+                    <p>You must specify a cooking time.</p>
+                  </div>
+                {{/if}}
               </div>
               <div class="field">
                 <label>PREP TIME</label>
-                <input placeholder="Prep Time" type="text">
+                <input placeholder="Prep Time" type="text" name="preptime" id="preptime">
+                {{#if displayFieldError 'preptime' }}
+                  <div class="ui error message">
+                    <p>You must specify a prep time.</p>
+                  </div>
+                {{/if}}
               </div>
             </div>
             <div class="field">
               <label>DESCRIPTION</label>
-              <textarea rows="2"></textarea>
+              <textarea rows="2" placeholder="Description" name="description" id="description"></textarea>
+              {{#if displayFieldError 'description' }}
+                <div class="ui error message">
+                  <p>You must give a description.</p>
+                </div>
+              {{/if}}
             </div>
             <div class="field">
-            <label>INGREDIENTS</label>
-            <textarea rows="2"></textarea>
-          </div>
+              <label>INGREDIENTS</label>
+              <textarea rows="2" placeholder="Ingredients list" name="ingredients[]" id="ingredients[]"></textarea>
+              {{#if displayFieldError 'ingredients[]' }}
+                <div class="ui error message">
+                  <p>You must input ingredients.</p>
+                </div>
+              {{/if}}
+            </div>
             <div class="field">
               <label>INSTRUCTIONS</label>
-              <textarea></textarea>
+              <textarea placeholder="Instructions"></textarea>
+              {{#if displayFieldError 'instructions' }}
+                <div class="ui error message">
+                  <p>You must give instructions.</p>
+                </div>
+              {{/if}}
             </div>
-            <div class="inline field">
+            <!--<div class="inline field">
               <div class="ui checkbox">
                 <input type="checkbox" tabindex="0" class="hidden">
                 <label>I agree to the terms and conditions</label>
               </div>
-            </div>
-            <div class="ui submit button">Submit</div>
-          </div>
+            </div>-->
+            <button id="add-food-button" class="ui middle aligned item submit button">Submit</button>
+          </form>
         </div>
 
-      </div>
-      <div class="two wide column"></div>
     </div>
   </div>
-
-  <div style="padding: 120px;">
-
-  </div>
-
-  <!--<div class="ui middle aligned centered grid text container">-->
-  <!--<div class="four wide column">-->
-  <!--<img class="ui small circular image" src="/images/meteor-logo.png"/>-->
-  <!--</div>-->
-
-  <!--<div class="eight wide column">-->
-  <!--<h1>Welcome to this template</h1>-->
-  <!--<p>Now get to work and modify this app!</p>-->
-  <!--</div>-->
-  <!--</div>-->
 
 </template>

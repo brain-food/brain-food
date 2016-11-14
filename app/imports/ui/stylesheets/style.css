@@ -19,18 +19,12 @@ h1, h2, h3, h4 {
   background-color: darkgreen;
 }
 
-.ui.my.middle.aligned.grid.container {
-  margin: 0;
-  padding: 0;
-}
-
 #login-buttons a, .accounts-dialog a{
   color: white;
 }
 
-.ui.my.selectable.inverted.celled.padded.table, .ui.my.inverted.segment, .my.twelve.wide.centered.column {
+.ui.my.selectable.inverted.celled.padded.table, .ui.my.inverted.segment, .my.twelve.wide.centered.column, #add-food-form {
   color: white;
-  background: darkgreen;
   background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(darkgreen, black); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
@@ -41,4 +35,16 @@ h1, h2, h3, h4 {
 .my.content, .my.sub.header, .my.header {
   color: white;
   font-family: 'Press Start 2P', cursive;
+}
+
+#add-food-button {
+  display: block;
+  margin: auto;
+  background: darkgreen;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(250,250,120);
+}
+
+textarea {
+  font-family: Lato;
 }
