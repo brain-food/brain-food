@@ -62,12 +62,6 @@ export const RecipeSchema = new SimpleSchema({
         type: String,
         optional: false,
       },
-      shortdescription: {
-        label: 'shortdescription',
-        type: String,
-        optional: false,
-        max: 1000,
-      },
     },
 );
 

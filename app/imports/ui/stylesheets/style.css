@@ -37,7 +37,7 @@ h1, h2, h3, h4 {
   font-family: 'Press Start 2P', cursive;
 }
 
-#add-food-button {
+#add-food-button, #add-ingredient, .ui.button.remove-ingredient {
   display: block;
   margin: auto;
   background: darkgreen;
@@ -45,6 +45,7 @@ h1, h2, h3, h4 {
   color: rgb(250,250,120);
 }
 
-textarea {
+textarea, .ui.error.message {
   font-family: Lato;
 }
+
