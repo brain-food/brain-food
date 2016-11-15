@@ -49,3 +49,6 @@ textarea, .ui.error.message {
   font-family: Lato;
 }
 
+.ui.fluid.search.dropdown.menu {
+  overflow: visible !important;
+}
