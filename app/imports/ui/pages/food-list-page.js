@@ -6,8 +6,11 @@ Template.Food_List_Page.helpers({
     return Recipes.find();
   },
   shortDescription(description) {
-    return description.split(" ").splice(0,20).join(" ") + "...";
-  }
+    return description.split(" ").splice(0, 20).join(" ") + "...";
+  },
+  inDollars(cents) {
+    return (cents / 100).toFixed(2);
+  },
 });
 
 Template.Food_List_Page.onCreated(function onCreated() {

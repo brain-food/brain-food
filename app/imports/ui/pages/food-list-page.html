@@ -17,10 +17,10 @@
         <tr>
           <td><a href="{{pathFor 'Food_Item_Page' _id=recipe._id}}"><img class="ui small rounded image" src="/images/{{recipe.image}}"> <h4 style="color:white">{{recipe.recipename}}</h4></a></td>
           <td>{{recipe.type}}</td>
-          <td>${{recipe.cost}}</td>
+          <td>${{inDollars recipe.cost}}</td>
           <td>{{recipe.cooktime}} min</td>
           <td>{{recipe.preptime}} min</td>
-          <td>{{recipe.shortdescription}}</td>
+          <td>{{shortDescription recipe.description}}</td>
         </tr>
       {{/each}}
       </tbody>
