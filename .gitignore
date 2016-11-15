@@ -12,5 +12,6 @@ settings.production.json
 
 # Build node_modules locally.
 node_modules/
-*.log
-*.log
+
+# Ignore npm debug log
+app/npm-debug.log
