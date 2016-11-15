@@ -17,3 +17,4 @@ import './add-food-page.js';
 import './edit-food-page.html';
 
 import './account-page.html';
+import './edit-account.html';
