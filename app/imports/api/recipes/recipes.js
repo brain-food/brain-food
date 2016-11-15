@@ -48,7 +48,7 @@ export const RecipeSchema = new SimpleSchema({
         optional: false,
       },
       ingredients: {
-        label: 'instructions',
+        label: 'ingredients',
         type: [String],
         optional: false,
       },
