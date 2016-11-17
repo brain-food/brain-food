@@ -14,7 +14,6 @@ Template.Account_Page.onCreated(function onCreated() {
 
 Template.Account_Page.helpers({
   profileField(fieldName) {
-    _id=this.userId;
     const profile = Profiles.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
