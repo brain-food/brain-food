@@ -4,6 +4,12 @@ import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 export const Profiles = new Mongo.Collection('Profile');
 
 export const ProfileSchema = new SimpleSchema({
+      owner:{
+        label: 'owner',
+        type: String,
+        optional: false,
+        max: 50,
+      },
       first: {
         label: 'first',
         type: String,
