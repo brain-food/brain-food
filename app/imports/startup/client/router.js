@@ -28,7 +28,7 @@ FlowRouter.route('/food-list', {
   },
 });
 
-FlowRouter.route('/food-item', {
+FlowRouter.route('/food-item/:_id', {
   name: 'Food_Item_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Food_Item_Page' });
@@ -60,5 +60,23 @@ FlowRouter.route('/account', {
   name: 'Account_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Account_Page' });
+  },
+});
+FlowRouter.route('/edit-account', {
+  name: 'Edit_Account_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Account_Page' });
+  },
+});
+FlowRouter.route('/add-location', {
+  name: 'Add_Location_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Location_Page' });
+  },
+});
+FlowRouter.route('/search', {
+  name: 'Search_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Search_Page' });
   },
 });

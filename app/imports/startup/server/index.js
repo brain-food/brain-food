@@ -1,1 +1,2 @@
-import './accounts.js';
+import './recipes.js';
+import './profile.js';
