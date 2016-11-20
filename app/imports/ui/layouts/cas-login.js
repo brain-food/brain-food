@@ -45,10 +45,30 @@ Template.Cas_Login.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
+
   ToS: function ToS() {
-    username = Meteor.user().profile.name;
-    profile = Profiles.findOne({ 'username': username });
+    //Find profile of user
+    const username = Meteor.user().profile.name;
+    let profile = Profiles.findOne({ 'username': username });
+
+    //If no current profile exists, make an empty one.
+    if (profile == undefined) {
+      const id = Profiles.insertOne(
+          {
+            'first': '',
+            'last': '',
+            'username': username,
+            'interest': '',
+            'major': '',
+            'agreedToS': false,
+          },
+      );
+      profile = Profiles.findOne(id);
+    }
+
+    // Only pop up if they haven't agreed to ToS yet.
     if (profile.agreedToS != true) {
+      // If they do not agree to ToS, log them out. This can be changed later.
       if (confirm("Do you agree to this website's rules?\n" +
               "\n" +
               "1. Don't post nonsense.\n" +
@@ -57,10 +77,12 @@ Template.Cas_Login.helpers({
         alert('Well bye then.');
         Meteor.logout();
       }
+      // Otherwise update their ToS agreement field.
       else {
-        Profiles.update(profile._id, {$set: {'agreedToS': true }});
+        Profiles.update(profile._id, { $set: { 'agreedToS': true } });
       }
     }
+
     return false;
   }
 });
