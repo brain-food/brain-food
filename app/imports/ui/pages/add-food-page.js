@@ -28,8 +28,8 @@ Template.Add_Food_Page.events({
       document.getElementsByName('remove-ingredient')[0].style.visibility='visible';
     }
 
-    let ingredientsList = document.getElementById('ingredients');
-    let ingredientTemplate = ingredientsList.firstElementChild.cloneNode(true);
+    const ingredientsList = document.getElementById('ingredients');
+    const ingredientTemplate = ingredientsList.firstElementChild.cloneNode(true);
     ingredientTemplate.firstElementChild.value = "";
     ingredientsList.appendChild(ingredientTemplate);
   },
@@ -52,9 +52,11 @@ Template.Add_Food_Page.events({
     const cooktime = event.target.cooktime.value;
     const preptime = event.target.preptime.value;
     const description = event.target.description.value;
+
     //For formatting purposes, we split the instructions into an array.
     const instructionsString = event.target.instructions.value;
     const instructions = instructionsString.split('\n', -1);
+
     //For making adding ingredients more intuitive.
     const ingredients = [];
     _.each(document.getElementById('ingredients').children, (element, index) => {

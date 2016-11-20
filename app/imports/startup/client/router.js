@@ -68,3 +68,15 @@ FlowRouter.route('/edit-account', {
     BlazeLayout.render('App_Body', { main: 'Edit_Account_Page' });
   },
 });
+FlowRouter.route('/add-location', {
+  name: 'Add_Location_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Location_Page' });
+  },
+});
+FlowRouter.route('/search', {
+  name: 'Search_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Search_Page' });
+  },
+});
