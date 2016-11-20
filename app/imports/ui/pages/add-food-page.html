@@ -14,6 +14,7 @@
 
       <div id="add-food-form" class="eight wide centered column" style="margin-left: 0;">
         <form class="ui inverted form recipe-data-form {{ errorClass }}">
+
           <div class="field">
             <label>FOOD NAME</label>
             <input placeholder="Mom's spaghetti" type="text" name="recipename" id="recipename">
@@ -23,6 +24,7 @@
               </div>
             {{/if}}
           </div>
+
           <div class="two fields">
             <div class="field">
               <label>FOOD TYPE</label>
@@ -35,7 +37,7 @@
             </div>
             <div class="field">
               <label>COST PER SERVING ($)</label>
-              <input placeholder="$1.23, $0.85" type="text" name="cost" id="cost">
+              <input placeholder="1.23, 0.85" type="text" name="cost" id="cost">
               {{#if displayFieldError 'cost' }}
                 <div class="ui error message">
                   <p>Input a dollar amount.</p>
@@ -43,6 +45,7 @@
               {{/if}}
             </div>
           </div>
+
           <div class="two fields">
             <div class="field">
               <label>COOKING TIME (min)</label>
@@ -63,6 +66,7 @@
               {{/if}}
             </div>
           </div>
+
           <div class="field">
             <label>DESCRIPTION</label>
             <textarea rows="2" placeholder="Description" name="description" id="description"></textarea>
@@ -80,7 +84,6 @@
               <button style="margin-left: 10px; visibility: hidden" type="button" class="ui button remove-ingredient" name="remove-ingredient">X</button>
             </div>
           </div>
-
           {{#if displayFieldError 'ingredients' }}
             <div class="ui error message">
               <p>Input ingredients.</p>
@@ -94,6 +97,16 @@
             {{#if displayFieldError 'instructions' }}
               <div class="ui error message">
                 <p>Input instructions.</p>
+              </div>
+            {{/if}}
+          </div>
+
+          <div class="field">
+            <label>IMAGE URL</label>
+            <input placeholder="URL of prepared food" type="text" name="image" id="image">
+            {{#if displayFieldError 'image' }}
+              <div class="ui error message">
+                <p>Insert a URL.</p>
               </div>
             {{/if}}
           </div>
