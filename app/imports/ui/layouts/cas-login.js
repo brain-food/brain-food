@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { Profiles } from '../../api/profile/profile.js'
 
 Template.Cas_Login.events({
   /**
@@ -37,7 +38,6 @@ Template.Cas_Login.onRendered(function enableDropDown() {
   });
 });
 
-
 Template.Cas_Login.helpers({
   /**
    * @returns {String} Returns the user who's logged in
@@ -45,4 +45,22 @@ Template.Cas_Login.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
+  ToS: function ToS() {
+    username = Meteor.user().profile.name;
+    profile = Profiles.findOne({ 'username': username });
+    if (profile.agreedToS != true) {
+      if (confirm("Do you agree to this website's rules?\n" +
+              "\n" +
+              "1. Don't post nonsense.\n" +
+              "2. Don't harass others.\n" +
+              "3. You will be banned if we think you hurt the site.") != true) {
+        alert('Well bye then.');
+        Meteor.logout();
+      }
+      else {
+        Profiles.update(profile._id, {$set: {'agreedToS': true }});
+      }
+    }
+    return false;
+  }
 });
