@@ -63,7 +63,7 @@ Template.Add_Food_Page.events({
       ingredients[index] = element.firstElementChild.value;
     });
 
-    const image = "smallLightBulb2.png";
+    const image = event.target.image.value;
     const username = Meteor.user().profile.name;
 
     //Get Put all variables into one object
