@@ -11,7 +11,6 @@ Template.Account_Page.onCreated(function onCreated() {
   });
 });
 
-
 Template.Account_Page.helpers({
   profileField(fieldName) {
     const username = Meteor.user().profile.name;
