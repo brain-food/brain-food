@@ -6,7 +6,10 @@ Template.Food_List_Page.helpers({
     return Recipes.find();
   },
   shortDescription(description) {
-    return description.split(" ").splice(0, 20).join(" ") + "...";
+    if (description.split(' ').length > 20) {
+      return description.split(" ").splice(0, 20).join(" ") + "...";
+    }
+    return description;
   },
   inDollars(cents) {
     return (cents / 100).toFixed(2);

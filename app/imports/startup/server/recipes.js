@@ -32,7 +32,7 @@ const recipeSeeds = [
       "1/4 teaspoon freshly ground black pepper",
       "1 teaspoon olive oil",
     ],
-    image: "easySirloinSteak.jpg",
+    image: "/images/easySirloinSteak.jpg",
     username: "clintmor",
   },
   {
@@ -50,7 +50,7 @@ const recipeSeeds = [
     ingredients: [
       "1 sweet potato",
     ],
-    image: "microwaveSweetPotato.jpg",
+    image: "/images/microwaveSweetPotato.jpg",
     username: "clintmor",
   },
 ];
