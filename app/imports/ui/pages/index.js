@@ -23,3 +23,6 @@ import './add-location-page.html';
 import './add-location-page.js';
 
 import './search_page.html';
+
+import './maps.html';
+import './maps.js';
