@@ -23,3 +23,5 @@ import './add-location-page.html';
 import './add-location-page.js';
 
 import './search_page.html';
+
+import './place-page.html';

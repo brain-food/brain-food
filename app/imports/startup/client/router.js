@@ -80,3 +80,10 @@ FlowRouter.route('/search', {
     BlazeLayout.render('App_Body', { main: 'Search_Page' });
   },
 });
+
+FlowRouter.route('/place', {
+  name: 'Place_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Place_Page' });
+  },
+});
