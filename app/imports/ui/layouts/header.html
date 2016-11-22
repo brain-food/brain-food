@@ -19,7 +19,9 @@
         <a class="{{ isActiveRoute 'Food_Hunt_Page'}} item" href="{{ pathFor 'Food_Hunt_Page' }}">Food_Hunt</a>
         <a class="{{ isActiveRoute 'Add_Food_Page'}} item" href="{{ pathFor 'Add_Food_Page' }}">Add_Food</a>
         <a class="{{ isActiveRoute 'Edit_Food_Page'}} item" href="{{ pathFor 'Edit_Food_Page' }}">Edit_Food</a>
+        {{#with currentUser}}
         <a class="{{ isActiveRoute 'Account_Page'}} item" href="{{ pathFor 'Account_Page' }}">Account</a>
+        {{/with}}
         <a class="{{ isActiveRoute 'Add_Location_Page'}} item" href="{{ pathFor 'Add_Location_Page' }}">Add_Vendor</a>
         <a class="fitted item" href="{{pathFor 'Search_Page'}}"><img class="ui image item" src="/images/searchIcon.png"></a>
 

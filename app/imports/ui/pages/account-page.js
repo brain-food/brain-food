@@ -14,14 +14,12 @@ Template.Account_Page.onCreated(function onCreated() {
 
 Template.Account_Page.helpers({
   profileField(fieldName) {
-    const _id = this.userId;
-    const profile = Profiles.findOne(FlowRouter.getParam('_id'));
+    const username = Meteor.user().profile.name;
+    const profile = Profiles.findOne('username': username);
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
   },
 });
 
-Template.registerHelper('equals', function (a,b ){
-  return a === b;
-})
+});
 

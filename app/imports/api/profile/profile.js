@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export const Profiles = new Mongo.Collection('Profile');
+export const Profiles = new Mongo.Collection('Profiles');
 
 export const ProfileSchema = new SimpleSchema({
   first: {
