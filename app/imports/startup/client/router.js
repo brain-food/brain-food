@@ -80,3 +80,10 @@ FlowRouter.route('/search', {
     BlazeLayout.render('App_Body', { main: 'Search_Page' });
   },
 });
+
+FlowRouter.route('/maps', {
+  name: 'Google_Maps',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Google_Maps' });
+  },
+});
