@@ -22,6 +22,8 @@ import './edit-account.html';
 import './add-location-page.html';
 import './add-location-page.js';
 
+import './place-page.html';
+
 import './search_page.html';
 
 import './maps.html';
