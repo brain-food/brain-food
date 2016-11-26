@@ -87,3 +87,10 @@ FlowRouter.route('/maps', {
     BlazeLayout.render('App_Body', { main: 'Google_Maps' });
   },
 });
+
+FlowRouter.route('/place', {
+  name: 'Place_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Place_Page' });
+  },
+});

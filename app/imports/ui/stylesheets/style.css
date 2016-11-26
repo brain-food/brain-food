@@ -32,6 +32,15 @@ h1, h2, h3, h4 {
   border: solid white;
 }
 
+.ui.myPlace.inverted.segment {
+  color: white;
+  background: -webkit-linear-gradient(rgb(25, 90, 60), black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgb(25, 90, 60), black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgb(25, 90, 60), black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgb(25, 90, 60), black); /* Standard syntax (must be last) */
+  border: solid white;
+}
+
 .my.content, .my.sub.header, .my.header {
   color: white;
   font-family: 'Press Start 2P', cursive;
@@ -59,4 +68,8 @@ textarea, .ui.error.message {
   padding: 20px;
   height: 600px;
   margin: auto;
+}
+
+.rightB {
+  float: right;
 }
