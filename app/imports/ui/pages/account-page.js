@@ -14,7 +14,7 @@ Template.Account_Page.onCreated(function onCreated() {
 Template.Account_Page.helpers({
   profileField(fieldName) {
     const username = Meteor.user().profile.name;
-    const profile = Profiles.findOne('username': username);
+    const profile = Profiles.findOne(username);
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
   },
