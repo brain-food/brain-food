@@ -1,31 +1,33 @@
 <template name="Food_List_Page">
 
-  <div style="padding-top: 20px;" class="ui container">
-    <img class="ui image item" style="margin-left: auto; margin-right: auto;" src="/images/foodList1.png">
-    <table class="ui my selectable inverted celled padded table">
-      <thead>
-      <tr>
-        <th class="single line">FOOD</th>
-        <th>TYPE</th>
-        <th>COST/SERVING</th>
-        <th>COOKING TIME</th>
-        <th>PREP TIME</th>
-        <th>DESCRIPTION</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each recipe in recipeList}}
+  {{#if Template.subscriptionsReady}}
+    <div style="padding-top: 20px;" class="ui container">
+      <img class="ui image item" style="margin-left: auto; margin-right: auto;" src="/images/foodList1.png">
+      <table class="ui my selectable inverted celled padded table">
+        <thead>
         <tr>
-          <td><a href="{{pathFor 'Food_Item_Page' _id=recipe._id}}"><img class="ui small rounded image" src="{{recipe.image}}"> <h4 style="color:white">{{recipe.recipename}}</h4></a></td>
-          <td>{{recipe.type}}</td>
-          <td>${{inDollars recipe.cost}}</td>
-          <td>{{recipe.cooktime}} min</td>
-          <td>{{recipe.preptime}} min</td>
-          <td>{{shortDescription recipe.description}}</td>
+          <th class="single line">FOOD</th>
+          <th>TYPE</th>
+          <th>COST/SERVING</th>
+          <th>COOKING TIME</th>
+          <th>PREP TIME</th>
+          <th>DESCRIPTION</th>
         </tr>
-      {{/each}}
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+        {{#each recipe in recipeList}}
+          <tr>
+            <td><a href="{{pathFor 'Food_Item_Page' _id=recipe._id}}"><img class="ui small rounded image" src="{{recipe.image}}"> <h4 style="color:white">{{recipe.recipename}}</h4></a></td>
+            <td>{{recipe.type}}</td>
+            <td>${{inDollars recipe.cost}}</td>
+            <td>{{recipe.cooktime}} min</td>
+            <td>{{recipe.preptime}} min</td>
+            <td>{{shortDescription recipe.description}}</td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  {{/if}}
 
 </template>

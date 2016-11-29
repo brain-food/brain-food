@@ -1,32 +1,37 @@
 <template name="Food_Item_Page">
 
-  <div style="padding-top: 25px;" class="ui my middle aligned grid container">
+  {{#if Template.subscriptionsReady}}
+    <div style="padding-top: 25px;" class="ui my middle aligned grid container">
 
-    <div class="my twelve wide centered column">
-      <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{recipeField 'recipename'}}</p>
-      <img class="ui centered rounded medium image" src="{{recipeField 'image'}}">
+      <div class="my twelve wide  centered column">
+        {{#if owner}}
+          <a href="{{pathFor 'Edit_Food_Page' _id=recipeId}}">
+            <button style="font-size: 150%; padding:10px;" id="edit-button" type="button">Edit</button>
+          </a>
+        {{/if}}
+        <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{recipeField 'recipename'}}</p>
+        <img class="ui centered rounded medium image" src="{{recipeField 'image'}}">
 
-      <div style="padding: 50px;">
-        {{recipeField 'description'}}
+        <div style="padding: 50px;">
+          {{recipeField 'description'}}
 
-        <div style="padding: 40px; padding-bottom: 0;">
-          <h4 style="text-align: center">INGREDIENTS</h4>
-          <ul style="list-style-type: square;">
-            {{#each ingredient in recipeField 'ingredients'}}
-              <li>{{ingredient}}</li>
-            {{/each}}
-          </ul>
+          <div style="padding: 40px; padding-bottom: 0;">
+            <h4 style="text-align: center">INGREDIENTS</h4>
+            <ul style="list-style-type: square;">
+              {{#each ingredient in recipeField 'ingredients'}}
+                <li>{{ingredient}}</li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <h4 style="text-align: center">INSTRUCTIONS</h4>
+
+          {{#each instruction in recipeField 'instructions'}}
+            {{instruction}}<br>
+          {{/each}}
         </div>
-
-        <h4 style="text-align: center">INSTRUCTIONS</h4>
-
-        {{#each instruction in recipeField 'instructions'}}
-          {{instruction}}<br>
-
-        {{/each}}
       </div>
     </div>
-
-  </div>
+  {{/if}}
 
 </template>
