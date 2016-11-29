@@ -49,7 +49,7 @@ FlowRouter.route('/add-food', {
   },
 });
 
-FlowRouter.route('/edit-food', {
+FlowRouter.route('/edit-food/:_id', {
   name: 'Edit_Food_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Edit_Food_Page' });

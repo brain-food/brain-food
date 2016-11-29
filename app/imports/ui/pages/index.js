@@ -15,6 +15,7 @@ import './add-food-page.html';
 import './add-food-page.js';
 
 import './edit-food-page.html';
+import './edit-food-page.js';
 
 import './account-page.html';
 import './edit-account.html';

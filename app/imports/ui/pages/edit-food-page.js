@@ -6,13 +6,18 @@ import { Recipes, RecipeSchema } from '../../api/recipes/recipes.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Add_Food_Page.onCreated(function onCreated() {
+Template.Edit_Food_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = RecipeSchema.namedContext('Add_Food_Page');
+  this.context = RecipeSchema.namedContext('Edit_Food_Page');
 });
 
-Template.Add_Food_Page.helpers({
+Template.Edit_Food_Page.helpers({
+  recipeField(fieldName) {
+    const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
+    // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
+    return recipe && recipe[fieldName];
+  },
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -22,32 +27,34 @@ Template.Add_Food_Page.helpers({
   },
 });
 
-Template.Add_Food_Page.events({
-  // Event for the add ingredient button.
+Template.Edit_Food_Page.events({
   'click .add-ingredient'() {
-    // If there was only one ingredient, add the delete button.
-    if (document.getElementById('ingredients').childElementCount <= 1) {
-      document.getElementsByName('remove-ingredient')[0].style.visibility='visible';
-    }
-
-    // Add an ingredient below the rest of the ingredients.
     const ingredientsList = document.getElementById('ingredients');
     const ingredientTemplate = ingredientsList.firstElementChild.cloneNode(true);
     ingredientTemplate.firstElementChild.value = "";
     ingredientsList.appendChild(ingredientTemplate);
+
+    if (document.getElementById('ingredients').childElementCount > 1) {
+      _.each(document.getElementsByName('remove-ingredient'), (element) => {
+            element.style.visibility = 'visible';
+          }
+      );
+    }
   },
-  // Event for the X button on ingredients.
-  'click .remove-ingredient'(event) {
-    // Removes an ingredient.
+  'click .remove-ingredient'(event){
     let toBeRemoved = event.target.parentElement;
     toBeRemoved.parentNode.removeChild(toBeRemoved);
 
-    // Hide delete button if there's only 1 ingredient left.
-    if(document.getElementById('ingredients').childElementCount <= 1) {
-      document.getElementsByName('remove-ingredient')[0].style.visibility='hidden';
+    if (document.getElementById('ingredients').childElementCount <= 1) {
+      document.getElementsByName('remove-ingredient')[0].style.visibility = 'hidden';
     }
   },
-  'submit .recipe-data-form'(event, instance) {
+  'click .test-image'()
+  {
+    document.getElementById('picture').src = document.getElementById('image').value;
+  },
+  'submit .recipe-data-form'(event, instance)
+  {
 
     event.preventDefault();
 
@@ -58,18 +65,19 @@ Template.Add_Food_Page.events({
     const cooktime = event.target.cooktime.value;
     const preptime = event.target.preptime.value;
     const description = event.target.description.value;
-    const image = event.target.image.value;
-    const username = Meteor.user().profile.name;
 
-    // For formatting purposes, we split the instructions into an array. Each element in the array is a line of text.
+    //For formatting purposes, we split the instructions into an array.
     const instructionsString = event.target.instructions.value;
     const instructions = instructionsString.split('\n', -1);
 
-    // Goes through every ingredient and puts it into an array.
+    //For making editing ingredients more intuitive.
     const ingredients = [];
     _.each(document.getElementById('ingredients').children, (element, index) => {
       ingredients[index] = element.firstElementChild.value;
     });
+
+    const image = event.target.image.value;
+    const username = Meteor.user().profile.name;
 
     //Get Put all variables into one object
     const newRecipe = { recipename, type, cost, cooktime, preptime, description, instructions, ingredients, image, username };
@@ -92,4 +100,3 @@ Template.Add_Food_Page.events({
     }
   },
 });
-

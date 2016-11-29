@@ -1,128 +1,129 @@
 <template name="Add_Food_Page">
 
-  <div style="padding-top: 15px;" class="ui borderless my container">
+  {{#if Template.subscriptionsReady}}
+    <div style="padding-top: 15px;" class="ui borderless my container">
 
-    <p style="color: rgb(250,250,120); text-align: center; font-size: 225%; padding-top: 14px; padding-bottom: 14px; background-image: url('https://s5.postimg.org/kynia6fyf/super_Green2_background.png');">
-      HERE COMES A NEW FOOD ITEM!
-    </p>
+      <p style="color: rgb(250,250,120); text-align: center; font-size: 225%; padding-top: 14px; padding-bottom: 14px; background-image: url('https://s5.postimg.org/kynia6fyf/super_Green2_background.png');">
+        HERE COMES A NEW FOOD ITEM!
+      </p>
 
-    <div class="ui middle aligned grid">
+      <div class="ui middle aligned grid">
 
-      <div class="four wide centered column" style="margin-right:20px;">
-        <img class="ui image" src="/images/GoFoodGirl.png">
+        <div class="four wide centered column" style="margin-right:20px;">
+          <img class="ui image" src="/images/GoFoodGirl.png">
+        </div>
+
+        <div id="add-food-form" class="eight wide centered column" style="margin-left: 0;">
+          <form class="ui inverted form recipe-data-form {{ errorClass }}">
+
+            <div class="field">
+              <label>FOOD NAME</label>
+              <input placeholder="Mom's spaghetti" type="text" name="recipename" id="recipename">
+              {{#if displayFieldError 'recipename' }}
+                <div class="ui error message">
+                  <p>Input a food name.</p>
+                </div>
+              {{/if}}
+            </div>
+
+            <div class="two fields">
+              <div class="field">
+                <label>FOOD TYPE</label>
+                <input placeholder="Protein, Vegetable" type="text" name="type" id="type">
+                {{#if displayFieldError 'type' }}
+                  <div class="ui error message">
+                    <p>Input a food type.</p>
+                  </div>
+                {{/if}}
+              </div>
+              <div class="field">
+                <label>COST PER SERVING ($)</label>
+                <input placeholder="1.23, 0.85" type="text" name="cost" id="cost">
+                {{#if displayFieldError 'cost' }}
+                  <div class="ui error message">
+                    <p>Input a dollar amount.</p>
+                  </div>
+                {{/if}}
+              </div>
+            </div>
+
+            <div class="two fields">
+              <div class="field">
+                <label>COOKING TIME (min)</label>
+                <input placeholder="Cooking Time" type="text" name="cooktime" id="cooktime">
+                {{#if displayFieldError 'cooktime' }}
+                  <div class="ui error message">
+                    <p>Input a number</p>
+                  </div>
+                {{/if}}
+              </div>
+              <div class="field">
+                <label>PREP TIME (min)</label>
+                <input placeholder="Prep Time" type="text" name="preptime" id="preptime">
+                {{#if displayFieldError 'preptime' }}
+                  <div class="ui error message">
+                    <p>Input a number</p>
+                  </div>
+                {{/if}}
+              </div>
+            </div>
+
+            <div class="field">
+              <label>DESCRIPTION</label>
+              <textarea rows="2" placeholder="Description" name="description" id="description"></textarea>
+              {{#if displayFieldError 'description' }}
+                <div class="ui error message">
+                  <p>You must give a description.</p>
+                </div>
+              {{/if}}
+            </div>
+
+            <!--This one isn't wrapped in a field div because the formatting wasn't working out.-->
+            <label>INGREDIENTS</label>
+            <div id="ingredients" name="ingredients" style="margin-bottom:10px;">
+              <div class="ui fluid input" style="margin-bottom: 10px;">
+                <input style="width:80%;" type="text" placeholder="Ingredient" name="ingredient">
+                <button style="margin-left: 10px; visibility: hidden" type="button" class="ui button remove-ingredient"
+                        name="remove-ingredient">X
+                </button>
+              </div>
+            </div>
+            {{#if displayFieldError 'ingredients' }}
+              <div class="ui error message">
+                <p>Input ingredients.</p>
+              </div>
+            {{/if}}
+            <button style="margin-bottom: 10px;" type="button" id="add-ingredient" class="ui button add-ingredient">Add
+              ingredient
+            </button>
+
+            <div class="field">
+              <label>INSTRUCTIONS</label>
+              <textarea placeholder="Instructions" name="instructions" id="instructions"></textarea>
+              {{#if displayFieldError 'instructions' }}
+                <div class="ui error message">
+                  <p>Input instructions.</p>
+                </div>
+              {{/if}}
+            </div>
+
+            <div class="field">
+              <label>IMAGE URL</label>
+              <input placeholder="URL of prepared food" type="text" name="image" id="image">
+              {{#if displayFieldError 'image' }}
+                <div class="ui error message">
+                  <p>Insert a URL.</p>
+                </div>
+              {{/if}}
+            </div>
+
+            <button id="add-food-button" class="ui button add-food-button" type="submit">Submit</button>
+          </form>
+        </div>
+
       </div>
-
-      <div id="add-food-form" class="eight wide centered column" style="margin-left: 0;">
-        <form class="ui inverted form recipe-data-form {{ errorClass }}">
-
-          <div class="field">
-            <label>FOOD NAME</label>
-            <input placeholder="Mom's spaghetti" type="text" name="recipename" id="recipename">
-            {{#if displayFieldError 'recipename' }}
-              <div class="ui error message">
-                <p>Input a food name.</p>
-              </div>
-            {{/if}}
-          </div>
-
-          <div class="two fields">
-            <div class="field">
-              <label>FOOD TYPE</label>
-              <input placeholder="Protein, Vegetable" type="text" name="type" id="type">
-              {{#if displayFieldError 'type' }}
-                <div class="ui error message">
-                  <p>Input a food type.</p>
-                </div>
-              {{/if}}
-            </div>
-            <div class="field">
-              <label>COST PER SERVING ($)</label>
-              <input placeholder="1.23, 0.85" type="text" name="cost" id="cost">
-              {{#if displayFieldError 'cost' }}
-                <div class="ui error message">
-                  <p>Input a dollar amount.</p>
-                </div>
-              {{/if}}
-            </div>
-          </div>
-
-          <div class="two fields">
-            <div class="field">
-              <label>COOKING TIME (min)</label>
-              <input placeholder="Cooking Time" type="text" name="cooktime" id="cooktime">
-              {{#if displayFieldError 'cooktime' }}
-                <div class="ui error message">
-                  <p>Input a number</p>
-                </div>
-              {{/if}}
-            </div>
-            <div class="field">
-              <label>PREP TIME (min)</label>
-              <input placeholder="Prep Time" type="text" name="preptime" id="preptime">
-              {{#if displayFieldError 'preptime' }}
-                <div class="ui error message">
-                  <p>Input a number</p>
-                </div>
-              {{/if}}
-            </div>
-          </div>
-
-          <div class="field">
-            <label>DESCRIPTION</label>
-            <textarea rows="2" placeholder="Description" name="description" id="description"></textarea>
-            {{#if displayFieldError 'description' }}
-              <div class="ui error message">
-                <p>You must give a description.</p>
-              </div>
-            {{/if}}
-          </div>
-
-          <label>INGREDIENTS</label>
-          <div id="ingredients" name="ingredients" style="margin-bottom:10px;">
-            <div class="ui fluid input" style="margin-bottom: 10px;">
-              <input style="width:80%;" type="text" placeholder="Ingredient" name="ingredient">
-              <button style="margin-left: 10px; visibility: hidden" type="button" class="ui button remove-ingredient" name="remove-ingredient">X</button>
-            </div>
-          </div>
-          {{#if displayFieldError 'ingredients' }}
-            <div class="ui error message">
-              <p>Input ingredients.</p>
-            </div>
-          {{/if}}
-          <button style="margin-bottom: 10px;" type="button" id="add-ingredient" class="ui button add-ingredient">Add ingredient</button>
-
-          <div class="field">
-            <label>INSTRUCTIONS</label>
-            <textarea placeholder="Instructions" name="instructions" id="instructions"></textarea>
-            {{#if displayFieldError 'instructions' }}
-              <div class="ui error message">
-                <p>Input instructions.</p>
-              </div>
-            {{/if}}
-          </div>
-
-          <div class="field">
-            <label>IMAGE URL</label>
-            <input placeholder="URL of prepared food" type="text" name="image" id="image">
-            {{#if displayFieldError 'image' }}
-              <div class="ui error message">
-                <p>Insert a URL.</p>
-              </div>
-            {{/if}}
-          </div>
-
-          <button id="add-food-button" class="ui button add-food-button" type="submit">Submit</button>
-        </form>
-      </div>
-
     </div>
-  </div>
+  {{/if }}
+
 
 </template>
-
-<!--<div class="inline field">
-            <div class="ui checkbox">
-              <input type="checkbox" tabindex="0" class="hidden">
-              <label>I agree to the terms and conditions</label>
-            </div>
-          </div>-->
