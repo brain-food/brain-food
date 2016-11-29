@@ -24,6 +24,7 @@ import './add-location-page.html';
 import './add-location-page.js';
 
 import './place-page.html';
+import './place-page.js';
 
 import './search_page.html';
 
