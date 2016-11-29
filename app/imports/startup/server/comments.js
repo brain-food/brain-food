@@ -1,4 +1,4 @@
-import { Recipes } from '../../api/recipes/recipes.js';
+import { Comments } from '../../api/comments/comments.js';
 import { _ } from 'meteor/underscore';
 
 /**
@@ -6,7 +6,7 @@ import { _ } from 'meteor/underscore';
  * @type {*[]}
  */
 
-const recipeSeeds = [
+const commentSeeds = [
   {
     recipename: "Easy Sirloin Steak",
     type: "Protein",
@@ -57,8 +57,8 @@ const recipeSeeds = [
 /**
  * Initialize the contacts collection if empty with seed data.
  */
-if (Recipes.find().count() === 0) {
-  _.each(recipeSeeds, function seedRecipe(recipe) {
-    Recipes.insert(recipe);
+if (Comments.find().count() === 0) {
+  _.each(commentSeeds, function seedComment(comment) {
+    Comments.insert(comment);
   });
 }

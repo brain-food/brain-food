@@ -27,7 +27,8 @@
 
         <hr style="background-color: white; height: 4px;">
 
-        <div style="color: rgb(250,250,120); font-family: 'Press Start 2P', cursive; font-weight: normal;" class="ui header">
+        <div style="color: rgb(250,250,120); font-family: 'Press Start 2P', cursive; font-weight: normal;"
+             class="ui header">
           COMMENTS (1)
         </div>
 
@@ -36,7 +37,10 @@
             <label style="color: white; font-size: 75%; font-weight: normal;">Write a new comment below:</label>
             <textarea rows="2"></textarea>
           </div>
-          <button style="font-family: 'Press Start 2P', cursive; font-weight: normal; font-size: 80%; color: rgb(250,250,120);" class="ui rightB inverted button">Comment</button>
+          <button
+              style="font-family: 'Press Start 2P', cursive; font-weight: normal; font-size: 80%; color: rgb(250,250,120);"
+              class="ui rightB inverted button">Comment
+          </button>
         </div>
 
         <br style="line-height: 400%;"/>
@@ -49,11 +53,12 @@
               <img src="/images/sample_Account_Avatar.png">
             </div>
             <div class="content">
-              <div style="color: rgb(255,255,200); font-family: 'Press Start 2P', cursive; font-size: 90%;" class="ui header">
+              <div style="color: rgb(255,255,200); font-family: 'Press Start 2P', cursive; font-size: 90%;"
+                   class="ui header">
                 Brain Sister's Sister
               </div>
               <div style="color: white;" class="description">
-                <p>Hello Food!  Candy, in tha morning, candy on the way to school
+                <p>Hello Food! Candy, in tha morning, candy on the way to school
                   Candy, at school, at lunch in the afternoon
                   Candy, its good, on your way home from school
                   Candy, at dinner,at dinner, in bed! </p>
@@ -61,6 +66,49 @@
             </div>
           </div>
         </div>
+
+        <div class="ui items">
+          <div class="item">
+            <div class="ui mini image">
+              <img src="/images/sample_Account_Avatar.png">
+            </div>
+            <div class="content">
+              <div style="color: rgb(255,255,200); font-family: 'Press Start 2P', cursive; font-size: 90%;"
+                   class="ui header">
+                Brain Sister's Sister
+              </div>
+              <div style="color: white;" class="description">
+                <p>Hello Food! Candy, in tha morning, candy on the way to school
+                  Candy, at school, at lunch in the afternoon
+                  Candy, its good, on your way home from school
+                  Candy, at dinner,at dinner, in bed! </p>
+                <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{#each comment in commentList}}
+          <div class="ui items">
+            <div class="item">
+              <div class="ui mini image">
+                <img src="/images/sample_Account_Avatar.png">
+              </div>
+              <div class="content">
+                <div style="color: rgb(255,255,200); font-family: 'Press Start 2P', cursive; font-size: 90%;"
+                     class="ui header">
+                  {{comment.recipename}}
+                </div>
+                <div style="color: white;" class="description">
+                  <p>
+                    {{comment.description}}
+                  </p>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
 
       </div>
 
