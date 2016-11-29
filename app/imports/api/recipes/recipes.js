@@ -1,5 +1,5 @@
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {Mongo} from 'meteor/mongo';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 /* eslint-disable object-shorthand */
 
@@ -57,7 +57,7 @@ export const RecipeSchema = new SimpleSchema({
         type: String,
         optional: false,
       },
-      username:  {
+      username: {
         label: 'username',
         type: String,
         optional: false,
