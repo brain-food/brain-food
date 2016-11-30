@@ -71,22 +71,22 @@ Template.Add_Food_Page.events({
       ingredients[index] = element.firstElementChild.value;
     });
 
-    //Get Put all variables into one object
+    // Put all variables into one object
     const newRecipe = { recipename, type, cost, cooktime, preptime, description, instructions, ingredients, image, username };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
-    console.log(instance.context.isValid());
     // Invoke clean so that newRecipe reflects what will be inserted.
     RecipeSchema.clean(newRecipe);
 
     // Determine validity.
     instance.context.validate(newRecipe);
-    console.log(instance.context.isValid());
     if (instance.context.isValid()) {
       instance.messageFlags.set(displayErrorMessages, false);
-      Recipes.insert(newRecipe);
-      FlowRouter.go('Food_List_Page'); //'Food_Item_Page'+ '/' + newRecipe._id
+      let id = Recipes.insert(newRecipe);
+      let path = '/food-item/' + id;
+      console.log(path);
+      FlowRouter.go(path);
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

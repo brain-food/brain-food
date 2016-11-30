@@ -25,6 +25,10 @@ Template.Edit_Food_Page.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
+  getCost() {
+    const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
+    return  (recipe.cost / 100).toFixed(2);
+  },
 });
 
 Template.Edit_Food_Page.events({
@@ -53,6 +57,18 @@ Template.Edit_Food_Page.events({
   {
     document.getElementById('picture').src = document.getElementById('image').value;
   },
+  'click #delete'()
+  {
+    if (confirm("You sure about this?") === true) {
+      Recipes.remove(FlowRouter.getParam('_id'));
+      FlowRouter.go('Food_List_Page');
+    }
+  },
+  'click #cancel'()
+  {
+    let path = '/food-item/' + FlowRouter.getParam('_id');
+    FlowRouter.go(path);
+  },
   'submit .recipe-data-form'(event, instance)
   {
 
@@ -79,22 +95,22 @@ Template.Edit_Food_Page.events({
     const image = event.target.image.value;
     const username = Meteor.user().profile.name;
 
-    //Get Put all variables into one object
-    const newRecipe = { recipename, type, cost, cooktime, preptime, description, instructions, ingredients, image, username };
+    // Put all variables into one object
+    const updatedRecipe = { recipename, type, cost, cooktime, preptime, description, instructions, ingredients, image, username };
+
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
-    console.log(instance.context.isValid());
-    // Invoke clean so that newRecipe reflects what will be inserted.
-    RecipeSchema.clean(newRecipe);
+    // Invoke clean so that updatedRecipe reflects what will be inserted.
+    RecipeSchema.clean(updatedRecipe);
 
     // Determine validity.
-    instance.context.validate(newRecipe);
-    console.log(instance.context.isValid());
+    instance.context.validate(updatedRecipe);
     if (instance.context.isValid()) {
       instance.messageFlags.set(displayErrorMessages, false);
-      Recipes.insert(newRecipe);
-      FlowRouter.go('Food_List_Page'); //'Food_Item_Page'+ '/' + newRecipe._id
+      Recipes.update(FlowRouter.getParam('_id'),{$set: updatedRecipe});
+      let path = '/food-item/' + FlowRouter.getParam('_id');
+      FlowRouter.go(path);
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
