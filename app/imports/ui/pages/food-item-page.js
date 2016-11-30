@@ -24,3 +24,10 @@ Template.Food_Item_Page.helpers({
     return Meteor.user().profile.name === Recipes.findOne(FlowRouter.getParam('_id')).username;
   },
 });
+
+Template.Food_Item_Page.events({
+  'click #edit-button'() {
+    let path = '/edit-food/' + FlowRouter.getParam('_id');
+    FlowRouter.go(path);
+  }
+});
