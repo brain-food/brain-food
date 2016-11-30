@@ -59,8 +59,10 @@ Template.Edit_Food_Page.events({
   },
   'click #delete'()
   {
-    Recipes.remove(FlowRouter.getParam('_id'));
-    FlowRouter.go('Food_List_Page');
+    if (confirm("You sure about this?") === true) {
+      Recipes.remove(FlowRouter.getParam('_id'));
+      FlowRouter.go('Food_List_Page');
+    }
   },
   'click #cancel'()
   {
