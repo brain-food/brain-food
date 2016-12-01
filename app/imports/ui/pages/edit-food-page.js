@@ -27,7 +27,9 @@ Template.Edit_Food_Page.helpers({
   },
   getCost() {
     const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
-    return  (recipe.cost / 100).toFixed(2);
+    if (recipe !== undefined) {
+      return (recipe.cost / 100).toFixed(2);
+    }
   },
 });
 

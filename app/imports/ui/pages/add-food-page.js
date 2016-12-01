@@ -85,7 +85,6 @@ Template.Add_Food_Page.events({
       instance.messageFlags.set(displayErrorMessages, false);
       let id = Recipes.insert(newRecipe);
       let path = '/food-item/' + id;
-      console.log(path);
       FlowRouter.go(path);
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
