@@ -13,25 +13,26 @@ Template.Edit_Food_Page.onCreated(function onCreated() {
 });
 
 Template.Edit_Food_Page.helpers({
-  recipeField(fieldName) {
-    const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
-    // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
-    return recipe && recipe[fieldName];
-  },
-  errorClass() {
-    return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
-  },
-  displayFieldError(fieldName) {
-    const errorKeys = Template.instance().context.invalidKeys();
-    return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
-  },
-  getCost() {
-    const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
-    if (recipe !== undefined) {
-      return (recipe.cost / 100).toFixed(2);
+      recipeField(fieldName) {
+        const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
+        // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
+        return recipe && recipe[fieldName];
+      },
+      errorClass() {
+        return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
+      },
+      displayFieldError(fieldName) {
+        const errorKeys = Template.instance().context.invalidKeys();
+        return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
+      },
+      getCost() {
+        const recipe = Recipes.findOne(FlowRouter.getParam('_id'));
+        if (recipe !== undefined) {
+          return (recipe.cost / 100).toFixed(2);
+        }
+      },
     }
-  },
-});
+);
 
 Template.Edit_Food_Page.events({
   'click .add-ingredient'() {
@@ -100,7 +101,6 @@ Template.Edit_Food_Page.events({
     // Put all variables into one object
     const updatedRecipe = { recipename, type, cost, cooktime, preptime, description, instructions, ingredients, image, username };
 
-
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that updatedRecipe reflects what will be inserted.
@@ -110,7 +110,7 @@ Template.Edit_Food_Page.events({
     instance.context.validate(updatedRecipe);
     if (instance.context.isValid()) {
       instance.messageFlags.set(displayErrorMessages, false);
-      Recipes.update(FlowRouter.getParam('_id'),{$set: updatedRecipe});
+      Recipes.update(FlowRouter.getParam('_id'), { $set: updatedRecipe });
       let path = '/food-item/' + FlowRouter.getParam('_id');
       FlowRouter.go(path);
     } else {
