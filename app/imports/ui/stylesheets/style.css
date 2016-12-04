@@ -17,19 +17,13 @@ h1, h2, h3, h4 {
 
 .ui.my.selectable.inverted.celled.padded.table, .ui.my.inverted.segment, .my.twelve.wide.centered.column, #add-food-form {
   color: white;
-  background: -webkit-linear-gradient(darkgreen, black); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(darkgreen, black); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(darkgreen, black); /* Standard syntax (must be last) */
+  background: linear-gradient(darkgreen, black);
   border: solid white;
 }
 
 .ui.myPlace.inverted.segment {
   color: white;
-  background: -webkit-linear-gradient(rgb(25, 90, 60), black); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(rgb(25, 90, 60), black); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(rgb(25, 90, 60), black); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(rgb(25, 90, 60), black); /* Standard syntax (must be last) */
+  background: linear-gradient(rgb(25, 90, 60), black);
   border: solid white;
 }
 
