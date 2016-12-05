@@ -1,4 +1,5 @@
 <template name="Account_Page">
+  {{#if Template.subscriptionsReady}}
   <div style="height: 600px;" class="ui my middle aligned grid container">
     <div class="two column row">
       <div class="twelve wide column">
@@ -10,8 +11,10 @@
                 <img src="/images/sample_Account_Avatar.png">
               </a>
               <div class="content">
+                {{#if owner}}
                 <a style="color: rgb(250,250,120);
-  font-family: 'Press Start 2P', cursive;" class="my header">BRAIN GIRL</a>
+  font-family: 'Press Start 2P', cursive;" class="my header">{{profileField 'first'}} GIRL</a>
+                {{/if}}
                 <div style="color: white;" class="description">
                   <p>LEVEL &nbsp;&nbsp;&nbsp; 1</p>
                   <p>HEALTH &nbsp;&nbsp;&nbsp; Good</p>
@@ -84,6 +87,7 @@
 
     </div>
   </div>
+  {{/if}}
   <!--<div class="ui middle aligned centered grid text container">-->
   <!--<div class="four wide column">-->
   <!--<img class="ui small circular image" src="/images/meteor-logo.png"/>-->
