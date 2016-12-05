@@ -67,10 +67,55 @@
               {{/if}}
             </div>
 
+            <div class="two fields">
+              <div class="field">
+                <label>FOOD TYPE</label>
+                <input placeholder="Protein, Vegetable" type="text" name="type" id="type" value="{{recipeField 'type'}}">
+                {{#if displayFieldError 'type' }}
+                  <div class="ui error message">
+                    <p>Input a food type.</p>
+                  </div>
+                {{/if}}
+              </div>
+              <div class="field">
+                <label>COST PER SERVING ($)</label>
+                <input placeholder="1.23, 0.85" type="text" name="cost" id="cost" value="{{getCost}}">
+                {{#if displayFieldError 'cost' }}
+                  <div class="ui error message">
+                    <p>Input a dollar amount.</p>
+                  </div>
+                {{/if}}
+              </div>
+            </div>
+
+            <div class="two fields">
+              <div class="field">
+                <label>COOKING TIME (min)</label>
+                <input placeholder="Cooking Time" type="text" name="cooktime" id="cooktime" value="{{recipeField 'cooktime'}}">
+                {{#if displayFieldError 'cooktime' }}
+                  <div class="ui error message">
+                    <p>Input a number</p>
+                  </div>
+                {{/if}}
+              </div>
+              <div class="field">
+                <label>PREP TIME (min)</label>
+                <input placeholder="Prep Time" type="text" name="preptime" id="preptime" value="{{recipeField 'preptime'}}">
+                {{#if displayFieldError 'preptime' }}
+                  <div class="ui error message">
+                    <p>Input a number</p>
+                  </div>
+                {{/if}}
+              </div>
+            </div>
 
           </div>
 
-          <button id="update-food-button" class="ui button update-food-button" type="submit">Update</button>
+          <div style="text-align: center;">
+          <button style="display:inline; margin:0;" id="cancel" class="ui button edit-food-button" type="button">Cancel</button>
+          <button style="display:inline; margin:0;" id="update-food-button" class="ui button edit-food-button" type="submit">Update</button>
+          <button style="display:inline; margin:0;" id="delete" class="ui button edit-food-button" type="button">Delete</button>
+          </div>
         </form>
 
       </div>

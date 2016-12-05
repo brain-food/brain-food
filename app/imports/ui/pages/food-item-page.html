@@ -1,22 +1,20 @@
 <template name="Food_Item_Page">
 
   {{#if Template.subscriptionsReady}}
-    <div style="padding-top: 25px;" class="ui my middle aligned grid container">
+    <div style="padding-top: 25px;" class="ui my aligned grid container">
 
-      <div class="my twelve wide  centered column">
+      <div class="my twelve wide centered column">
         {{#if owner}}
-          <a href="{{pathFor 'Edit_Food_Page' _id=recipeId}}">
-            <button style="font-size: 150%; padding:10px;" id="edit-button" type="button">Edit</button>
-          </a>
+          <button style="margin:auto; display:block;" id="edit-button" class="ui button" type="button">Edit</button>
         {{/if}}
         <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{recipeField 'recipename'}}</p>
         <img class="ui centered rounded medium image" src="{{recipeField 'image'}}">
 
         <div style="padding: 50px;">
-          {{recipeField 'description'}}
+          <p>{{recipeField 'description'}}</p>
 
           <div style="padding: 40px; padding-bottom: 0;">
-            <h4 style="text-align: center">INGREDIENTS</h4>
+            <h4>INGREDIENTS</h4>
             <ul style="list-style-type: square;">
               {{#each ingredient in recipeField 'ingredients'}}
                 <li>{{ingredient}}</li>
@@ -24,13 +22,17 @@
             </ul>
           </div>
 
-          <h4 style="text-align: center">INSTRUCTIONS</h4>
+          <h4 style="margin-left: 40px; padding-top:20px;">INSTRUCTIONS</h4>
 
           {{#each instruction in recipeField 'instructions'}}
-            {{instruction}}<br>
+            <p>{{instruction}}</p>
           {{/each}}
         </div>
+
+        <p style="margin-top: 50px;">Submitted by: {{recipeField 'username'}}</p>
+
       </div>
+
     </div>
   {{/if}}
 

@@ -8,6 +8,19 @@
       </div>
       <div class="twelve wide column">
         <h2 style="font-family: 'Press Start 2P';">USE FOOD TO LEVEL UP YOUR BRAIN.</h2>
+        <br>
+        <br>
+        {{#if currentUser}}
+          <p>Hey {{user}}. What're you up to?</p>
+
+          <div>
+            <a class="ui button fornow" href="{{ pathFor 'Food_List_Page' }}">Show me the foods</a>
+            <a class="ui button fornow" href="{{ pathFor 'Add_Food_Page' }}">I have a recipe</a>
+            <a class="ui button fornow" href="{{ pathFor 'Food_Hunt_Page' }}">Where do I get food</a>
+          </div>
+        {{else}}
+          <p>{{>Cas_Login}} to access</p>
+        {{/if}}
 
       </div>
     </div>
