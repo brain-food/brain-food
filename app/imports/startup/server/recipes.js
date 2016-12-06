@@ -120,7 +120,7 @@ const recipeSeeds = [
       "3. Add butter to a pan. When the butter starts bubbling, add the tomatoes and fry them.",
       "4. Once the tomatoes' skin starts to peel, add the eggs.",
       "5. Stir the eggs to make it cook evenly.",
-      "6. When they's just a bit of moisture left in the eggs, turn off the heat.",
+      "6. When there's just a bit of moisture left in the eggs, turn off the heat.",
       "Done.",
     ],
     ingredients: [
