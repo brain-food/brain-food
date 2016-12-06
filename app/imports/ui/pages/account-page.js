@@ -18,6 +18,9 @@ Template.Account_Page.helpers({
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
     return profile && profile[fieldName];
   },
+  profileList(){
+    return Profiles.find();
+  },
   owner() {
     return Meteor.user().profile.name === Profiles.findOne(FlowRouter.getParam('_id')).username;
   },
