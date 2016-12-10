@@ -50,6 +50,14 @@ if (Meteor.isClient) {
           zoom: 15
         };
       }
+    },
+    mapOptions1: function() {
+      if (GoogleMaps.loaded()) {
+        return {
+          center: new google.maps.LatLng(21.3000, 157.8190),
+          zoom: 15
+        };
+      }
     }
   });
 }
