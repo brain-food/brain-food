@@ -130,6 +130,26 @@ const recipeSeeds = [
     image: "http://www.annabelkarmel.com/wp-content/uploads/2014/08/Scrambled-Eggs-with-Tomato-Onion-3.jpg",
     username: "keal",
   },
+  {                                         //Steven
+    recipename: "Microwave Oatmeal",
+    type:"Starch",
+    cost: 800,
+    cooktime: 3,
+    preptime: 1,
+    description: "A classic breakfast for a broke college student, doesn't taste extremely good but it's pretty nutritious and won't have you regretting it later.",
+    instructions: [
+        "1. Place 1/3rd cup of oatmeal into the bowl.",
+        "2. Place 1 cup of water into the bowl.",
+        "3. Microwave for 3 minutes.",
+        "4. Enjoy!",
+    ],
+    ingredients: [
+        "1. Water",
+        "2. Oatmeal",
+    ],
+    image:"http://www.oneresult.com/sites/default/files/u4/Oatmeal.jpeg",
+    username: "sbraun",
+  },
 ];
 
 /**
