@@ -198,6 +198,51 @@ const recipeSeeds = [
     image:"http://cookinghawaiianstyle.com/images/recipes/1329805137GoteborgSausageMusubi2.jpg",
     username: "sbraun",
   },
+  {                                                 //Kea
+    recipename: "Garlic Green Beans",
+    type: "Vegetable",
+    cost: 100,
+    cooktime: 15,
+    preptime: 10,
+    description: "Caramelized garlic and cheese! Is there anything better with green beans? You'd better make plenty for everyone!",
+    instructions: [
+      '1. In a large skillet over medium heat, melt butter with olive oil.',
+      '2. Add garlic, and cook until lightly browned, stirring frequently.',
+      '3. Stir in green beans, and season with salt and pepper.',
+      '4. Cook until beans are tender, about 10 minutes.',
+      '5. Remove from heat, and sprinkle with Parmesan cheese.',
+    ],
+    ingredients: [
+      '1 tablespoon butter',
+      '3 tablespoons olive oil',
+      '1 medium head garlic, peeled and sliced',
+      '2 14.5 oz canned green beans, drained',
+      'salt and pepper, to taste',
+      '1/4 cup grated parmesan cheese',
+    ],
+    image: "http://images.media-allrecipes.com/userphotos/600x600/610614.jpg",
+    username: "clintmor",
+  },
+  {                                                 //Clint
+    recipename: "Whole Grain Walnut Trail Mix",
+    type: "Protein",
+    cost: 100,
+    cooktime: 0,
+    preptime: 3,
+    description: "Here is a trail mix that includes puffed whole-grain cereal that can stretch out your grazing time, and make it last longer without blowing your healthy eating. The addition of dark chocolate will only extend your satisfaction!",
+    instructions: [
+      "1. Combine everything, and store in a zip-style bag (or individual single-serving bags) in the refrigerator.",
+    ],
+    ingredients: [
+      "1 cup lightly toasted California walnuts (halves or coarsely chopped)",
+      "1/4 cup raisins",
+      "1/4 cup dried cherries",
+      "3 1/2 cups unsweetened whole-grain puffed cereal",
+      "1 cup semisweet chocolate chips – or broken pieces of dark chocolate",
+    ],
+    image: "https://res.cloudinary.com/ca-walnuts/image/fetch/ar_16:9,c_fill,f_auto,g_auto,w_800/https://ca-walnuts.s3.amazonaws.com/walnuts/cache/file/4C06CCA5-5A35-47D5-B6621803D0F18695.jpg",
+    username: "clintmor",
+  },
 ];
 
 /**
