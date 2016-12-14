@@ -41,7 +41,9 @@ Template.Edit_Account_Page.events({
     const last = event.target.last.value;
     const interest = event.target.interest.value;
     const major = event.target.major.value;
-    const updatedContact = { first, last, interest, major};
+    const agreedToS = true;
+    const username = Meteor.user().profile.name;
+    const updatedContact = { first, last, interest, major, agreedToS, username};
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

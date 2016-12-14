@@ -1,4 +1,5 @@
 <template name="Account_Page">
+  {{#if Template.subscriptionsReady}}
   <div style="height: 600px;" class="ui my middle aligned grid container">
     <div class="two column row">
       <div class="twelve wide column">
@@ -10,15 +11,17 @@
                 <img src="/images/sample_Account_Avatar.png">
               </a>
               <div class="content">
+                {{#if owner}}
                 <a style="color: rgb(250,250,120);
-  font-family: 'Press Start 2P', cursive;" class="my header">BRAIN GIRL</a>
+  font-family: 'Press Start 2P', cursive;" class="my header">{{profileField 'first'}} {{profileField 'last'}}</a>
+                {{/if}}
                 <div style="color: white;" class="description">
                   <p>LEVEL &nbsp;&nbsp;&nbsp; 1</p>
                   <p>HEALTH &nbsp;&nbsp;&nbsp; Good</p>
                   <p>EXP POINTS &nbsp;&nbsp;&nbsp; 82</p>
                   <p>NEXT LEVEL &nbsp;&nbsp;&nbsp; 14</p>
                   <a class="ui image" href="{{ pathFor 'Edit_Account_Page' }}">
-                    <img src="/images/edit_Icon_Resize.png">
+                    <img src="/images/edit_Icon_Resize.png">EDIT
                   </a>
                 </div>
               </div>
@@ -30,14 +33,9 @@
             </a>
           </p>
           <div class="description">
-            <p>I want candy, bubble gum, and taffy
-              Skip to the sweet shop with my sweetheart Sandy
-              Got my pennies saved so I'm her sugar daddy
-              I'm her Hume Cronyn and she's my Jessica Tandy, I want candy!
-
-              put it in a pile, split it with my bitty 50/50 down the line
-              kinda like close encounters of the cavity kind
-              im talkin liquorice kisses, talkin chocodile smiles</p>
+            {{#if owner}}
+            <p>{{profileField 'interest'}}</p>
+            {{/if}}
           </div>
 
           <div style="padding-top: 20px;">
@@ -48,7 +46,9 @@
             </p>
             <div class="description">
               <p>
-                Information and Computer Sciences, B.S.
+                {{#if owner}}
+                {{profileField 'major'}}
+                {{/if}}
               </p>
             </div>
           </div>
@@ -84,6 +84,7 @@
 
     </div>
   </div>
+  {{/if}}
   <!--<div class="ui middle aligned centered grid text container">-->
   <!--<div class="four wide column">-->
   <!--<img class="ui small circular image" src="/images/meteor-logo.png"/>-->
