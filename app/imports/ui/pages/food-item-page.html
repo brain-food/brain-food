@@ -4,10 +4,11 @@
     <div style="padding-top: 25px;" class="ui my aligned grid container">
 
       <div class="my twelve wide centered column">
-        {{#if owner}}
-          <button style="margin:auto; display:block;" id="edit-button" class="ui button" type="button">Edit</button>
-        {{/if}}
-        <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{recipeField 'recipename'}}</p>
+        <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{recipeField 'recipename'}}
+          {{#if owner}}
+            <a class="ui image" id="edit-button"><img src="/images/edit_Icon_Resize.png"></a>
+          {{/if}}
+        </p>
         <img class="ui centered rounded medium image" src="{{recipeField 'image'}}">
 
         <div style="padding: 50px;">

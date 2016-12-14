@@ -94,7 +94,7 @@
                 <input placeholder="Cooking Time" type="text" name="cooktime" id="cooktime" value="{{recipeField 'cooktime'}}">
                 {{#if displayFieldError 'cooktime' }}
                   <div class="ui error message">
-                    <p>Input a number</p>
+                    <p>It needs to be an integer.</p>
                   </div>
                 {{/if}}
               </div>
@@ -103,7 +103,7 @@
                 <input placeholder="Prep Time" type="text" name="preptime" id="preptime" value="{{recipeField 'preptime'}}">
                 {{#if displayFieldError 'preptime' }}
                   <div class="ui error message">
-                    <p>Input a number</p>
+                    <p>It needs to be an integer!</p>
                   </div>
                 {{/if}}
               </div>
