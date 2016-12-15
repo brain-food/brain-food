@@ -46,8 +46,11 @@ Template.Place_Page.events({
     // Get fields and put them in variables
     const comment = event.target.comment.value;
 
+    // automatically add username to each comment document:
+    const username = Meteor.user().profile.name;
+
     // Put all variables into one object
-    const newComment = { comment };
+    const newComment = { comment, username };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
