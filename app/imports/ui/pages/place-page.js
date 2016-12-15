@@ -56,6 +56,7 @@ Template.Place_Page.events({
 
     // Determine validity.
     instance.context.validate(newComment);
+    console.log( instance.context.isValid() );
     if (instance.context.isValid()) {
       instance.messageFlags.set(displayErrorMessages, false);
       let id = Comments.insert(newComment);

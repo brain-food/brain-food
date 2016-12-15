@@ -18,12 +18,12 @@ export const CommentSchema = new SimpleSchema({
       yea: {
         label: 'yea',
         type: Number,
-        optional: false,
+        optional: true,
       },
       nay: {
         label: 'nay',
         type: Number,
-        optional: false,
+        optional: true,
       },
     },
 );
