@@ -1,0 +1,33 @@
+<template name="A_Place_Page">
+
+  <div style="padding-top: 25px;" class="ui my middle aligned grid container">
+
+    <div class="my twelve wide centered column">
+      <p style="text-align: center; font-size: 200%; line-height: 160%; padding-top:25px;">{{placeField 'placename'}}</p>
+      <img class="ui centered rounded medium image" src="{{placeField 'image'}}">
+
+      <div style="padding: 50px;">
+
+        <div style="padding: 40px; padding-bottom: 0;">
+          <a href="{{pathFor 'Google_Maps'}}"><h4 style="text-align: center">Distance from Campus</h4></a>
+          <ul style="list-style-type: square;">
+        <li>{{placeField 'distance'}} minutes</li>
+            </ul>
+          </div>
+
+
+        <div style="padding: 40px; padding-bottom: 0;">
+          <h4 style="text-align: center">INGREDIENTS</h4>
+          <ul style="list-style-type: square;">
+            {{#each ingredient in placeField 'ingredients'}}
+            <li>{{ingredient}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</template>
