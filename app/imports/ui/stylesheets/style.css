@@ -32,7 +32,7 @@ h1, h2, h3, h4 {
   font-family: 'Press Start 2P', cursive;
 }
 
-#add-food-button, #add-ingredient, .ui.button.remove-ingredient, .ui.button.edit-food-button {
+#add-food-button, #add-place-button, #add-ingredient, .ui.button.remove-ingredient, .ui.button.edit-food-button {
   display: block;
   margin: auto;
   background: darkgreen;
