@@ -94,3 +94,10 @@ FlowRouter.route('/place', {
     BlazeLayout.render('App_Body', { main: 'Place_Page' });
   },
 });
+
+FlowRouter.route('/place-item/:_id', {
+  name: 'A_Place_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'A_Place_Page' });
+  },
+});
