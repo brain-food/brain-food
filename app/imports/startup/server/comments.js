@@ -11,11 +11,13 @@ const commentSeeds = [
     comment: "The Market is so cool.  Like, totally.  Like, my friend asked me if I wanted to eat a burger for lunch and I was like, \"As if!\"  I'm totally eating fruits and veggies from The Market instead!",
     yea: 0,
     nay: 0,
+    username: "Cher",
   },
   {
     comment: "M is for Market, that's good enough for me.  M is for Market, that's good enough for me.  M is for Market, that's good enough for me!  Market, Market, Market starts with M.",
     yea: 0,
     nay: 0,
+    username: "Cookie Monster",
   },
 ];
 

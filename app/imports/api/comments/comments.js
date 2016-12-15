@@ -25,6 +25,11 @@ export const CommentSchema = new SimpleSchema({
         type: Number,
         optional: true,
       },
+      username: {
+        label: 'username',
+        type: String,
+        optional: false,
+      },
     },
 );
 
