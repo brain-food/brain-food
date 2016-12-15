@@ -10,6 +10,7 @@ import './food-item-page.html';
 import './food-item-page.js';
 
 import './food-hunt-page.html';
+import './food-hunt-page.js';
 
 import './add-food-page.html';
 import './add-food-page.js';
@@ -26,7 +27,11 @@ import './add-location-page.js';
 import './place-page.html';
 import './place-page.js';
 
+import './a-place-page.html';
+import './a-place-page.js';
+
 import './search_page.html';
+import './search-page.js';
 
 import './maps.html';
 import './maps.js';

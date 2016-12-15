@@ -24,49 +24,71 @@
             background: -moz-linear-gradient(darkgreen, black); /* For Firefox 3.6 to 15 */
             background: linear-gradient(darkgreen, black); /* Standard syntax (must be last) */
             border: solid white;" class="ui inverted segment">
-          <div class="ui inverted form">
+          <div class="ui inverted form" id="places-data-form">
+            <form class="ui inverted form places-data-form {{ errorClass }}">
             <div class="field">
               <label>LOCATION NAME</label>
-              <input placeholder="Location Name" type="text">
+              <input placeholder="Location Name" type="text" name="placename" id="placename">
+              {{#if displayFieldError 'placename' }}
+                <div class ="ui error message">
+                  <p>Input a location name.</p>
+                </div>
+              {{/if}}
             </div>
             <div class="field">
               <div class="field">
                 <label>DISTANCE FROM CAMPUS</label>
-                <input placeholder="Minutes of Walking Distance" type="text">
+                <input placeholder="Minutes of Walking Distance" type="text" name="distance" id="distance">
+                {{#if displayFieldError 'distance' }}
+                <div class ="ui error message">
+                  <p>Input a distance</p>
+                </div>
+                {{/if}}
               </div>
-              <div class="field">
                <label>INGREDIENTS</label>
-                <select class="ui fluid search dropdown" multiple="">
-                  <option value="">Ingredients</option>
-                  <option value="apples">Apples</option>
-                  <option value="banana">Bananas</option>
-                  <option value="bread">Bread</option>
-                  <option value="buns">Buns</option>
-                  <option value="turkey">Turkey</option>
-                  <option value="steak">Steak</option>
-                  <option value="chicken">Chicken</option>
-                  <option value="olives">Olives</option>
-                  <option value="garlic">Garlic</option>
-                  <option value="mushrooms">Mushrooms</option>
-                  <option value="wine">Wine</option>
-                  <option value="cheese">Cheese</option>
-                  <option value="rice">Rice</option>
-                  <option value="soy sauce">Soy Sauce</option>
-                  <option value="coconut">Coconut</option>
-                  </select>
+                <!--<select class="ui fluid search dropdown" multiple="" name="ingredients" id="ingredients">-->
+                  <!--<option value="">Ingredients</option>-->
+                  <!--<option value="apples">Apples</option>-->
+                  <!--<option value="banana">Bananas</option>-->
+                  <!--<option value="bread">Bread</option>-->
+                  <!--<option value="buns">Buns</option>-->
+                  <!--<option value="turkey">Turkey</option>-->
+                  <!--<option value="steak">Steak</option>-->
+                  <!--<option value="chicken">Chicken</option>-->
+                  <!--<option value="olives">Olives</option>-->
+                  <!--<option value="garlic">Garlic</option>-->
+                  <!--<option value="mushrooms">Mushrooms</option>-->
+                  <!--<option value="wine">Wine</option>-->
+                  <!--<option value="cheese">Cheese</option>-->
+                  <!--<option value="rice">Rice</option>-->
+                  <!--<option value="soy sauce">Soy Sauce</option>-->
+                  <!--<option value="coconut">Coconut</option>-->
+                  <!--</select>-->
+              <!--</div>-->
+                <div id="ingredients" name="ingredients" style="margin-bottom:10px;">
+                  <div class="ui fluid input" style="margin-bottom: 10px;">
+                    <input style="width:80%;" type="text" placeholder="Ingredient" name="ingredients">
+                    <button style="margin-left: 10px; visibility: hidden" type="button" class="ui button remove-ingredient" name="remove-ingredient">X</button>
+                  </div>
+                </div>
+              {{#if displayFieldError 'ingredients' }}
+              <div class="ui error message">
+                <p>Input an Ingredient</p>
               </div>
+              {{/if}}
+              <button style="margin-bottom: 10px;" type="button" id="add-ingredient" class="ui button add-ingredient">Add ingredient</button>
             </div>
             <div class="field">
               <label>IMAGE</label>
-              <input placeholder="IMAGE URL" type="text">
-            </div>
-            <div class="inline field">
-              <div class="ui checkbox">
-                <input name="example" type="checkbox">
-                <label>I agree to the terms and conditions</label>
+              <input placeholder="IMAGE URL" type="text" name="image" id="image">
+              {{#if displayFieldError 'image' }}
+              <div class="ui error message">
+                <p>Input an image url</p>
               </div>
+              {{/if}}
             </div>
-            <div class="ui submit button">Submit</div>
+            <button id="add-place-button" class="ui button add-place-button" type="submit">Submit</button>
+            </form>
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import { Recipes } from '../../api/recipes/recipes.js';
 
 Template.Food_List_Page.helpers({
   recipeList() {        // returns entire recipe list
+    console.log(Recipes.find());
     return Recipes.find();
   },
   shortDescription(description) {
