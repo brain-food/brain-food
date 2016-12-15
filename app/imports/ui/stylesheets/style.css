@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Press Start 2P', cursive;
+  src: url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+}
+
+body {
+  font-size: 80%;
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  padding-top: 61px;  /* Move body of page below navbar. */
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Press Start 2P';
+}
+
+.ui.my.selectable.inverted.celled.padded.table, .ui.my.inverted.segment, .my.twelve.wide.centered.column, #add-food-form {
+  color: white;
+  background: linear-gradient(darkgreen, black);
+  border: solid white;
+}
+
+.ui.myPlace.inverted.segment {
+  color: white;
+  background: linear-gradient(rgb(25, 90, 60), black);
+  border: solid white;
+}
+
+.my.content, .my.sub.header, .my.header {
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#add-food-button, #add-place-button, #add-ingredient, .ui.button.remove-ingredient, .ui.button.edit-food-button {
+  display: block;
+  margin: auto;
+  background: darkgreen;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(250,250,120);
+}
+
+#test-image, #edit-button {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(250,250,120);
+  background: green;
+  border: solid white;
+  display: inline-block;
+}
+
+.ui.button.fornow{
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom:5px;
+  color: white;
+  background: black;
+  border: solid white;
+  display: inline-block;
+}
+
+.ui.button.fornow:hover {
+  background: white;
+  color: black;
+}
+
+textarea, .ui.error.message {
+  font-family: Lato;
+}
+
+.ui.fluid.search.dropdown.menu {
+  overflow: visible !important;
+}
+
+.map-container {
+  width: 75%;
+  max-width: 100%;
+  height: 600px;
+  margin: auto;
+}
+
+.rightB {
+  float: right;
+}
